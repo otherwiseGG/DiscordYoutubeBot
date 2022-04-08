@@ -1,3 +1,6 @@
+console.clear();
+console.log(`[YOUTUBE] Starting Service`)
+
 const {Discord, Client, Collection, Message, MessageEmbed} = require("discord.js");
 const dClient = new Client({intents: 32767});
 dClient.db = require("quick.db");
@@ -5,7 +8,7 @@ dClient.request = new(require("rss-parser"))();
 dClient.config = require("./config.js");
 
 dClient.on("ready", () => {
-    console.log(`Started following Youtube [ID] ${dClient.config.channel_id}`);
+    console.log(`[YOUTUBE] Service Started`);
     console.log(`For Support please join https://discord.gg/PrGCCWpDbP`)
     handleUploads();
 });
